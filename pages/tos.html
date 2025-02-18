@@ -1,0 +1,320 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locomi - Transform Your Goals into Reality with Location-Based Accountability | Available on iOS</title>
+    <meta name="description" content="Locomi helps you build lasting habits through location-based accountability. Set goals, show up, and earn beautiful flower badges while building better habits. Download now on iOS.">
+    <meta name="keywords" content="location based accountability, habit formation app, goal tracking, productivity app, iOS app, japanese app, flower badges, motivation app">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Locomi - Location-Based Accountability App">
+    <meta property="og:description" content="Transform your goals into reality with location-based accountability. Available on iOS.">
+    <meta property="og:image" content="/api/placeholder/1200/630">
+    <meta property="og:url" content="https://loco-mi.com">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Locomi - Location-Based Accountability App">
+    <meta name="twitter:description" content="Turn your location into motivatio with location-based accountability. Available on iOS.">
+    <meta name="twitter:image" content="/api/placeholder/1200/630">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #36b6ff;
+            --secondary-color: #7ED321;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-background {
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .gradient-background::before {
+            content: '';
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .gradient-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(56, 182, 255, 0.2), rgba(193, 255, 114, 0.1));
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .circle-1 {
+            width: 250px;
+            height: 250px;
+            top: 100px;
+            left: -150px;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            top: 50px;
+            left: 100px;
+        }
+
+        .circle-3 {
+            width: 180px;
+            height: 180px;
+            top: 300px;
+            left: -50px;
+        }
+
+        .circle-4 {
+            width: 300px;
+            height: 300px;
+            top: 400px;
+            left: 200px;
+        }
+
+        .circle-5 {
+            width: 100px;
+            height: 100px;
+            top: 500px;
+            left: -100px;
+            filter: blur(30px);
+        }
+    </style>
+
+    <script>
+        function createGradientBackground(containerElement) {
+            const circles = [
+                { width: "250px", height: "250px", top: "10%", left: "-10%" },
+                { width: "150px", height: "150px", top: "20%", left: "30%" },
+                { width: "180px", height: "180px", top: "50%", left: "5%" },
+                { width: "300px", height: "300px", top: "70%", left: "60%" },
+                { width: "100px", height: "100px", top: "80%", left: "10%", blur: true }
+            ];
+
+            // Create a container for circles that takes up the full space but doesn't affect layout
+            const circlesContainer = document.createElement('div');
+            circlesContainer.style.position = 'absolute';
+            circlesContainer.style.top = '0';
+            circlesContainer.style.left = '0';
+            circlesContainer.style.width = '100%';
+            circlesContainer.style.height = '100%';
+            circlesContainer.style.zIndex = -1;
+            
+            circles.forEach((circle, index) => {
+                const div = document.createElement('div');
+                div.classList.add('gradient-circle', `circle-${index + 1}`);
+                div.style.width = circle.width;
+                div.style.height = circle.height;
+                div.style.top = circle.top;
+                div.style.left = circle.left;
+                if (circle.blur) {
+                    div.style.filter = 'blur(30px)';
+                }
+                circlesContainer.appendChild(div);
+            });
+
+            containerElement.classList.add('gradient-background');
+            containerElement.appendChild(circlesContainer);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createGradientBackground(document.getElementById('tos'));
+        });
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="gradient-text text-2xl font-bold flex items-center space-x-2">
+                        <a href="../index.html" class="flex items-center space-x-2">
+                            <img src="../assets/images/logo_color.png" alt="Locomi Logo" class="w-8 h-8"/>
+                            <span>Locomi</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../index.html#features" class="text-gray-700 hover:text-[#4A90E2]">Features</a>
+                        <a href="../index.html#habit-formation" class="text-gray-700 hover:text-[#4A90E2]">Build Habits</a>
+                        <a href="../index.html#how-it-works" class="text-gray-700 hover:text-[#4A90E2]">How It Works</a>
+                        <a href="../index.html#use-cases" class="text-gray-700 hover:text-[#4A90E2]">Use Cases</a>
+                        <a href="../index.html#faq" class="text-gray-700 hover:text-[#4A90E2]">FAQ</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- <button class="px-4 py-2 rounded-lg" style="color: #4A90E2; border: 1px solid #4A90E2;">Login</button> -->
+                    <a href="https://x.com" target="_blank">
+                        <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                            <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                            <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
+                        </svg>
+                    </a>
+                    <select class="bg-transparent text-gray-700">
+                        <option value="en">EN</option>
+                        <option value="jp">JP</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="tos" class="relative p-20 pt-20">
+        <h2 class="text-3xl font-bold text-center mb-2">Terms of Service</h2>
+        <p style="white-space: pre-wrap">
+            These Terms of Service (hereinafter referred to as the "Terms") set forth the terms and conditions for using the Locomi app (hereinafter referred to as the "App") 
+            and establish the rights and obligations between users and the App. Please read all provisions carefully before using the App.
+
+            1. Application
+            1.1. These Terms shall govern all relationships between registered users (as defined in Article 2) and the App regarding its use.
+            1.2. Any rules, guidelines, or other regulations related to the App that are posted within the App or on its website shall constitute an integral part of these Terms.
+
+            2. Definitions
+            The following terms used in these Terms shall have the meanings set forth below:
+            (1) "App" means the location-based accountability application named "Locomi" (including any related features, regardless of name changes).
+            (2) "Location Task" means a commitment set by a registered user to be at a specific location at a specified time.
+            (3) "Task Amount" means the amount set by the registered user that will be charged if the Location Task is not completed.
+            (4) "Task Time" means the time specified by the registered user by which the Location Task must be completed.
+            (5) "Task Completion" means when a registered user is within 100 meters of the specified location at the Task Time and confirms completion through the App.
+            (6) "Points" means the reward points (200 points per completed task) that users can collect to unlock flower badges.
+            (7) "Outstanding Balance" means any failed payments that the user owes.
+            (8) "Registration Information" means email address, phone number, credit card information, and other information required for using the App.
+
+            3. Registration
+            3.1. Users must register to use the App by agreeing to these Terms and providing the required Registration Information.
+            3.2. Users must provide accurate, current, and complete information during registration.
+            3.3. Users are responsible for maintaining the confidentiality of their account information and all activities that occur under their account.
+
+            4. Service Usage
+            4.1. To set a Location Task, users must specify:
+            - The target location
+            - The Task Time
+            - The Task Amount
+            4.2. The Task Amount will be charged to the user's registered payment method if:
+            - The user is not within 100 meters of the specified location at the Task Time
+            - The user fails to confirm task completion through the App
+            4.3. Upon successful Task Completion, users will receive 200 Points.
+            4.4. Points can be collected and used to unlock flower badges within the App.
+
+            5. Payments and Charges
+            5.1. Users must provide valid payment information to use the App.
+            5.2. If a payment fails, it will be recorded as an Outstanding Balance.
+            5.3. Users may pay Outstanding Balances at their convenience, but continued use of the App may be restricted until payment is made.
+            5.4. All payment processing fees are the responsibility of the user.
+
+            6. Location Services and Privacy
+            6.1. The App requires access to device location services to function properly.
+            6.2. Location data is only collected when necessary to verify Task Completion.
+            6.3. Users' privacy is protected according to our Privacy Policy, which is incorporated into these Terms by reference.
+
+            7. Prohibited Actions
+            7.1. Users shall not:
+            - Attempt to manipulate location data or circumvent location verification
+            - Use automated systems to complete tasks
+            - Share accounts or account credentials
+            - Use the App for illegal purposes
+            - Attempt to reverse engineer the App
+            - Harass or harm other users
+            - Submit false payment information
+
+            8. Service Interruption
+            8.1. The App service may be interrupted for:
+            - Maintenance
+            - Technical issues
+            - System updates
+            - Force majeure events
+            8.2. No refunds will be issued for tasks failed due to service interruptions.
+
+            9. Points and Rewards
+            9.1. Points are awarded only for verified Task Completion.
+            9.2. Points have no monetary value and cannot be exchanged for cash.
+            9.3. Points and flower badges may not be transferred between accounts.
+            9.4. We reserve the right to modify the points system and rewards.
+
+            10. Account Termination
+            10.1. Users may terminate their account at any time.
+            10.2. Outstanding Balances must be paid before account termination.
+            10.3. We may terminate accounts for:
+                - Violation of these Terms
+                - Extended periods of inactivity
+                - Suspicious activity
+                - Failure to pay Outstanding Balances
+
+            11. Limitation of Liability
+            11.1. The App is provided "as is" without warranties of any kind.
+            11.2. We are not responsible for:
+                - Failure to reach locations due to transportation issues
+                - Device or network failures
+                - Incorrect location data
+                - Lost or stolen devices
+            11.3. Maximum liability is limited to the amount paid by the user in the past 3 months.
+
+            12. Changes to Terms
+            12.1. These Terms may be updated at any time.
+            12.2. Users will be notified of changes through the App.
+            12.3. Continued use of the App constitutes acceptance of new Terms.
+
+            13. Governing Law
+            13.1. These Terms shall be governed by the laws of [Your Jurisdiction].
+            13.2. Any disputes shall be resolved in the courts of [Your Jurisdiction].
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold flex items-center space-x-2">
+                        <img src="../assets/images/logo_white_full.png" alt="Locomi Logo" class="w-8 h-8"/>
+                        <span>Locomi</span>
+                    </div>
+                    <p class="text-white mb-4">Your location-based accountability partner for achieving goals and collecting beautiful rewards.</p>
+                    <div class="flex items-center space-x-2">
+                        <a href="https://x.com" target="_blank">
+                            <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                                <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                                <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <!-- Empty middle column -->
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-black hover:text-white">Help Center</a></li>
+                        <li><a href="privacy.html" class="text-black hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-black hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

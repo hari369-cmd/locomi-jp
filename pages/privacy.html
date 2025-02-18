@@ -1,0 +1,307 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locomi - Transform Your Goals into Reality with Location-Based Accountability | Available on iOS</title>
+    <meta name="description" content="Locomi helps you build lasting habits through location-based accountability. Set goals, show up, and earn beautiful flower badges while building better habits. Download now on iOS.">
+    <meta name="keywords" content="location based accountability, habit formation app, goal tracking, productivity app, iOS app, japanese app, flower badges, motivation app">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Locomi - Location-Based Accountability App">
+    <meta property="og:description" content="Transform your goals into reality with location-based accountability. Available on iOS.">
+    <meta property="og:image" content="/api/placeholder/1200/630">
+    <meta property="og:url" content="https://loco-mi.com">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Locomi - Location-Based Accountability App">
+    <meta name="twitter:description" content="Turn your location into motivatio with location-based accountability. Available on iOS.">
+    <meta name="twitter:image" content="/api/placeholder/1200/630">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #36b6ff;
+            --secondary-color: #7ED321;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-background {
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .gradient-background::before {
+            content: '';
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .gradient-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(56, 182, 255, 0.2), rgba(193, 255, 114, 0.1));
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .circle-1 {
+            width: 250px;
+            height: 250px;
+            top: 100px;
+            left: -150px;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            top: 50px;
+            left: 100px;
+        }
+
+        .circle-3 {
+            width: 180px;
+            height: 180px;
+            top: 300px;
+            left: -50px;
+        }
+
+        .circle-4 {
+            width: 300px;
+            height: 300px;
+            top: 400px;
+            left: 200px;
+        }
+
+        .circle-5 {
+            width: 100px;
+            height: 100px;
+            top: 500px;
+            left: -100px;
+            filter: blur(30px);
+        }
+    </style>
+
+    <script>
+        function createGradientBackground(containerElement) {
+            const circles = [
+                { width: "250px", height: "250px", top: "10%", left: "-10%" },
+                { width: "150px", height: "150px", top: "20%", left: "30%" },
+                { width: "180px", height: "180px", top: "50%", left: "5%" },
+                { width: "300px", height: "300px", top: "70%", left: "60%" },
+                { width: "100px", height: "100px", top: "80%", left: "10%", blur: true }
+            ];
+
+            // Create a container for circles that takes up the full space but doesn't affect layout
+            const circlesContainer = document.createElement('div');
+            circlesContainer.style.position = 'absolute';
+            circlesContainer.style.top = '0';
+            circlesContainer.style.left = '0';
+            circlesContainer.style.width = '100%';
+            circlesContainer.style.height = '100%';
+            circlesContainer.style.zIndex = -1;
+            
+            circles.forEach((circle, index) => {
+                const div = document.createElement('div');
+                div.classList.add('gradient-circle', `circle-${index + 1}`);
+                div.style.width = circle.width;
+                div.style.height = circle.height;
+                div.style.top = circle.top;
+                div.style.left = circle.left;
+                if (circle.blur) {
+                    div.style.filter = 'blur(30px)';
+                }
+                circlesContainer.appendChild(div);
+            });
+
+            containerElement.classList.add('gradient-background');
+            containerElement.appendChild(circlesContainer);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createGradientBackground(document.getElementById('policy'));
+        });
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="gradient-text text-2xl font-bold flex items-center space-x-2">
+                        <a href="../index.html" class="flex items-center space-x-2">
+                            <img src="../assets/images/logo_color.png" alt="Locomi Logo" class="w-8 h-8"/>
+                            <span>Locomi</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../index.html#features" class="text-gray-700 hover:text-[#4A90E2]">Features</a>
+                        <a href="../index.html#habit-formation" class="text-gray-700 hover:text-[#4A90E2]">Build Habits</a>
+                        <a href="../index.html#how-it-works" class="text-gray-700 hover:text-[#4A90E2]">How It Works</a>
+                        <a href="../index.html#use-cases" class="text-gray-700 hover:text-[#4A90E2]">Use Cases</a>
+                        <a href="../index.html#faq" class="text-gray-700 hover:text-[#4A90E2]">FAQ</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- <button class="px-4 py-2 rounded-lg" style="color: #4A90E2; border: 1px solid #4A90E2;">Login</button> -->
+                    <a href="https://x.com" target="_blank">
+                        <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                            <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                            <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
+                        </svg>
+                    </a>
+                    <select class="bg-transparent text-gray-700">
+                        <option value="en">EN</option>
+                        <option value="jp">JP</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="policy" class="relative p-20 pt-20">
+        <h2 class="text-3xl font-bold text-center mb-2">Privacy Policy</h2>
+        <p style="white-space: pre-wrap">
+            This Privacy Policy explains how your personal information is collected, used, and protected when you use the Locomi app ("App"). 
+            We are committed to protecting your privacy and handling your data in an open and transparent manner.
+
+            1. Definition of Personal Information
+            Personal information refers to any information about a living individual that can identify them, including:
+            - Information that can directly identify an individual (such as name, date of birth)
+            - Information that can identify an individual when combined with other data
+            - Personal identification codes
+
+            2. Information We Collect
+            2.1. Information you provide to us:
+            - Email address
+            - Payment information
+            - Task creation time and date
+
+            2.2. Information we automatically collect:
+            - Points collected
+            - Badges unlocked
+            - Payment history
+
+            3. How We Use Your Information
+            We use your personal information for:
+            - Providing core App functionality (location verification, task tracking)
+            - Processing payments and managing outstanding balances
+            - Awarding and managing points and badges
+            - Sending notifications about tasks and achievements
+            - Improving the App's features and performance
+            - Providing customer support
+            - Preventing fraud and unauthorized use
+
+            4. Location Data
+            4.1. The App requires access to your device's location to function properly. We do not either collect or store your location data.
+            4.2. You can control location permissions through your device settings, but this may limit App functionality.
+
+            5. Data Protection
+            We implement appropriate technical and organizational measures to protect your personal information against:
+            - Unauthorized access
+            - Accidental loss
+            - Destruction
+            - Alteration
+            - Unauthorized disclosure
+
+            6. Payment Information
+            6.1. Payment information is processed securely through our payment service providers.
+            6.2. We do not store complete credit card information on our servers.
+            6.3. Payment history is retained for legal and accounting purposes.
+
+            7. Data Sharing
+            We do not sell your personal information. We may share your data with:
+            - Payment processors (for processing transactions)
+            - Cloud service providers (for hosting services)
+            - Law enforcement (when legally required)
+
+            8. Your Rights
+            You have the right to:
+            - Access your personal information
+            - Correct inaccurate information
+            - Request deletion of your data
+
+            9. Data Retention
+            We retain your personal information for as long as necessary to:
+            - Provide our services
+            - Comply with legal obligations
+            - Resolve disputes
+            - Enforce our agreements
+
+            10. Cookies and Similar Technologies
+            The App may use cookies and similar technologies to:
+            - Remember your preferences
+            - Analyze App usage
+            - Improve performance
+            You can manage these through your device settings.
+
+            11. Children's Privacy
+            The App is not intended for users under the age of 13. We do not knowingly collect information from children under 13.
+
+            12. Changes to This Policy
+            We may update this Privacy Policy periodically. We will notify you of any material changes through the App.
+
+            13. Contact Information
+            For privacy-related questions or requests, contact us at:
+            [Your Contact Information]
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold flex items-center space-x-2">
+                        <img src="../assets/images/logo_white_full.png" alt="Locomi Logo" class="w-8 h-8"/>
+                        <span>Locomi</span>
+                    </div>
+                    <p class="text-white mb-4">Your location-based accountability partner for achieving goals and collecting beautiful rewards.</p>
+                    <div class="flex items-center space-x-2">
+                        <a href="https://x.com" target="_blank">
+                            <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                                <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                                <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <!-- Empty middle column -->
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-black hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-black hover:text-white">Privacy Policy</a></li>
+                        <li><a href="tos.html" class="text-black hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
