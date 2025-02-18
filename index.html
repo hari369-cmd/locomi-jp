@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locomi - Transform Your Goals into Reality with Location-Based Accountability | Available on iOS</title>
-    <meta name="description" content="Locomi helps you build lasting habits through location-based accountability. Set goals, show up, and earn beautiful flower badges while building better habits. Download now on iOS.">
-    <meta name="keywords" content="location based accountability, habit formation app, goal tracking, productivity app, iOS app, japanese app, flower badges, motivation app">
+    <title>Locomi - 位置情報を活用して目標達成をサポート | iOS アプリ</title>
+    <meta name="description" content="Locomiは位置情報を活用してあなたの習慣作りをサポートします。目標を設定し、実行し、美しい花のバッジを集めながら、より良い習慣を築きましょう。iOS でダウンロード可能。">
+    <meta name="keywords" content="位置情報 アカウンタビリティ, 習慣形成アプリ, 目標管理, 生産性アプリ, iOSアプリ, 日本語アプリ, フラワーバッジ, モチベーションアプリ">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Locomi - Location-Based Accountability App">
-    <meta property="og:description" content="Transform your goals into reality with location-based accountability. Available on iOS.">
+    <meta property="og:title" content="Locomi - 位置情報を活用したアカウンタビリティアプリ">
+    <meta property="og:description" content="位置情報を活用して目標を現実に。iOS でダウンロード可能。">
     <meta property="og:image" content="/api/placeholder/1200/630">
-    <meta property="og:url" content="https://loco-mi.com">
+    <meta property="og:url" content="https://jp.locomiapp.com">
     
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Locomi - Location-Based Accountability App">
-    <meta name="twitter:description" content="Turn your location into motivatio with location-based accountability. Available on iOS.">
+    <meta name="twitter:title" content="Locomi - 位置情報を活用したアカウンタビリティアプリ">
+    <meta name="twitter:description" content="位置情報であなたのモチベーションを高めましょう。iOS でダウンロード可能。">
     <meta name="twitter:image" content="/api/placeholder/1200/630">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -103,13 +103,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const langSelect = document.querySelector('.lang-select');
+            const container = document.querySelector('.lang-selector-container');
             
-            if (langSelect) {
+            if (langSelect && container) {
+                // Set initial value based on data attribute
+                const currentLang = container.dataset.currentLang;
+                langSelect.value = currentLang;
+
                 langSelect.addEventListener('change', () => {
                     if (langSelect.value === 'jp') {
-                        window.location.href = 'https://jp.locomiapp.com';
+                        window.location.href = 'jp.locomiapp.com';
                     } else {
-                        window.location.href = 'https://locomiapp.com';
+                        window.location.href = 'locomiapp.com';
                     }
                 });
             }
@@ -171,11 +176,11 @@
                         </a>
                     </div>
                     <div class="hidden md:flex space-x-8">
-                        <a href="#features" class="text-gray-700 hover:text-[#4A90E2]">Features</a>
-                        <a href="#habit-formation" class="text-gray-700 hover:text-[#4A90E2]">Build Habits</a>
-                        <a href="#how-it-works" class="text-gray-700 hover:text-[#4A90E2]">How It Works</a>
-                        <a href="#use-cases" class="text-gray-700 hover:text-[#4A90E2]">Use Cases</a>
-                        <a href="#faq" class="text-gray-700 hover:text-[#4A90E2]">FAQ</a>
+                        <a href="#features" class="text-gray-700 hover:text-[#4A90E2]">特徴</a>
+                        <a href="#habit-formation" class="text-gray-700 hover:text-[#4A90E2]">習慣を築く</a>
+                        <a href="#how-it-works" class="text-gray-700 hover:text-[#4A90E2]">しくみ</a>
+                        <a href="#use-cases" class="text-gray-700 hover:text-[#4A90E2]">使用例</a>
+                        <a href="#faq" class="text-gray-700 hover:text-[#4A90E2]">よくある質問</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -190,10 +195,12 @@
                             <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
                         </svg>
                     </a>
-                    <select class="bg-transparent text-gray-700 lang-select">
-                        <option value="en">ENG</option>
-                        <option value="jp">日本語</option>
-                    </select>
+                    <div class="lang-selector-container" data-current-lang="jp">
+                        <select class="bg-transparent text-gray-700 lang-select">
+                            <option value="en">ENG</option>
+                            <option value="jp">日本語</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -229,10 +236,10 @@
         <div class="relative z-10 max-w-6xl mx-auto px-4 py-16">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-white">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Turn Your Location into Motivation</h1>
-                    <p class="text-xl mb-8">Set goals, show up, and crush your procrastination. Your commitment, powered by location, powered by Locomi.</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">位置情報でモチベーションを高めよう</h1>
+                    <p class="text-xl mb-8">目標を設定し、実行し、先延ばしを克服しましょう。あなたの決意を、位置情報とLocomiがサポートします。</p>
                     <a href="https://apps.apple.com" class="inline-block">
-                        <img src="assets/images/app_store_download_icon.svg" alt="Download on the App Store" class="h-14 hover:opacity-90 transition-opacity"/>
+                        <img src="assets/images/app_store_jp.png" alt="App Storeでダウンロード" class="h-14 hover:opacity-90 transition-opacity"/>
                     </a>
                 </div>
             </div>
@@ -242,54 +249,54 @@
     <!-- Habit Formation Section -->
     <div id="habit-formation" class="py-16 bg-transparent">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="gradient-text text-5xl font-bold text-center mb-4">The Science of Habit Formation</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Locomi combines proven psychological principles with location-based accountability to help you build lasting habits.</p>
+            <h2 class="gradient-text text-5xl font-bold text-center mb-4">習慣形成の科学</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Locomiは、心理学の原理と位置情報を組み合わせて、持続可能な習慣作りをサポートします。</p>
             
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-semibold text-center mb-4" style="color: #4A90E2;">Location as an Anchor</h3>
-                    <p class="text-gray-600">Physical locations create strong environmental triggers that activate your habit loop. By linking habits to specific places, you're more likely to follow through.</p>
+                    <h3 class="text-xl font-semibold text-center mb-4" style="color: #4A90E2;">場所をアンカーに</h3>
+                    <p class="text-gray-600">物理的な場所が習慣のトリガーとなります。特定の場所と習慣を結びつけることで、実行力が高まります。</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-semibold text-center mb-4" style="color: #4A90E2;">Stakes for Motivation</h3>
-                    <p class="text-gray-600">Our stake-based system leverages loss aversion psychology to boost your initial motivation until the habit becomes intrinsically rewarding.</p>
+                    <h3 class="text-xl font-semibold text-center mb-4" style="color: #4A90E2;">モチベーションの仕組み</h3>
+                    <p class="text-gray-600">損失回避の心理を活用したステーク制度で、習慣が定着するまでの初期モチベーションを支援します。</p>
                 </div>
                 <div class="p-6 bg-gray-50 rounded-lg">
-                    <h3 class="text-xl font-semibold text-center mb-4" style="color: #4A90E2;">Reward-Driven Progress</h3>
-                    <p class="text-gray-600">Beautiful flower badges and botanical facts create a positive reinforcement cycle, making habit-building both educational and enjoyable.</p>
+                    <h3 class="text-xl font-semibold text-center mb-4" style="color: #4A90E2;">報酬による進捗</h3>
+                    <p class="text-gray-600">美しい花のバッジと植物学の豆知識で、習慣作りを楽しく学びのある体験にします。</p>
                 </div>
             </div>
 
             <div class="bg-gray-50 rounded-lg p-8">
-                <h3 class="text-2xl font-bold mb-6 text-center">The Locomi Habit Loop</h3>
+                <h3 class="text-2xl font-bold mb-6 text-center">Locomiの習慣ループ</h3>
                 <div class="grid md:grid-cols-4 gap-6">
                     <div class="text-center">
                         <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
                             <span class="text-2xl" style="color: #FFFF;">1</span>
                         </div>
-                        <h4 class="font-semibold mb-2">Cue</h4>
-                        <p class="text-sm text-gray-600">Location becomes your consistent environmental trigger</p>
+                        <h4 class="font-semibold mb-2">きっかけ</h4>
+                        <p class="text-sm text-gray-600">場所が一貫した環境トリガーになる</p>
                     </div>
                     <div class="text-center">
                         <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
                             <span class="text-2xl" style="color: #FFFF;">2</span>
                         </div>
-                        <h4 class="font-semibold mb-2">Craving</h4>
-                        <p class="text-sm text-gray-600">Stakes and rewards create motivation to follow through</p>
+                        <h4 class="font-semibold mb-2">渇望</h4>
+                        <p class="text-sm text-gray-600">杭と報酬が、やり抜く意欲を生み出す</p>
                     </div>
                     <div class="text-center">
                         <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
                             <span class="text-2xl" style="color: #FFFF;">3</span>
                         </div>
-                        <h4 class="font-semibold mb-2">Response</h4>
-                        <p class="text-sm text-gray-600">Show up and complete your intended activity</p>
+                        <h4 class="font-semibold mb-2">応答</h4>
+                        <p class="text-sm text-gray-600">目的の活動に参加し、完了する</p>
                     </div>
                     <div class="text-center">
                         <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
                             <span class="text-2xl" style="color: #FFFF;">4</span>
                         </div>
-                        <h4 class="font-semibold mb-2">Reward</h4>
-                        <p class="text-sm text-gray-600">Earn points and unlock beautiful flower badges</p>
+                        <h4 class="font-semibold mb-2">報酬</h4>
+                        <p class="text-sm text-gray-600">ポイントを貯めて美しい花のバッジをアンロック</p>
                     </div>
                 </div>
             </div>
@@ -299,7 +306,7 @@
     <!-- How It Works -->
     <div id="how-it-works" class="py-16 bg-transparent">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">How Locomi Works</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">Locomiのしくみ</h2>
             
             <!-- Step 1 with image -->
             <div class="flex flex-col md:flex-row items-center mb-16 gap-8">
@@ -312,8 +319,8 @@
                             <span class="text-3xl" style="color: #FFFF;">1</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-semibold mb-4">Set Your Goal</h3>
-                            <p class="text-xl text-gray-600">Choose your location, time, and stake amount. Whether it's the gym, library, or language school.</p>
+                            <h3 class="text-3xl font-semibold mb-4">目標を設定する</h3>
+                            <p class="text-xl text-gray-600">場所、時間、賭け金の額を選んでください。ジムでも、図書館でも、語学学校でも。</p>
                         </div>
                     </div>
                 </div>
@@ -330,8 +337,8 @@
                             <span class="text-3xl" style="color: #FFFF;">2</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-semibold mb-4">Show Up</h3>
-                            <p class="text-xl text-gray-600">Arrive within 100m of your target location at the set time. We'll verify your presence automatically.</p>
+                            <h3 class="text-3xl font-semibold mb-4">場所に現れる</h3>
+                            <p class="text-xl text-gray-600">設定時刻に目標地点から100m以内に到着し、アプリで到着を確認する。</p>
                         </div>
                     </div>
                 </div>
@@ -348,8 +355,8 @@
                             <span class="text-3xl" style="color: #FFFF;">3</span>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-semibold mb-4">Grow & Collect</h3>
-                            <p class="text-xl text-gray-600">Complete tasks to earn points and unlock beautiful flower badges with fascinating botanical facts.</p>
+                            <h3 class="text-3xl font-semibold mb-4">育てて集める</h3>
+                            <p class="text-xl text-gray-600">タスクをクリアしてポイントを獲得し、魅力的な植物学的事実が書かれた美しい花のバッジをアンロックしましょう。</p>
                         </div>
                     </div>
                 </div>
@@ -360,7 +367,7 @@
     <!-- Features -->
     <div id="features" class="py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Locomi?</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">Locomiを選ぶ理由</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="flex items-start space-x-4">
                     <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
@@ -370,8 +377,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2">No More Procrastination</h3>
-                        <p class="text-gray-600">Leverage pyschology to beat procrastination and develop habits.</p>
+                        <h3 class="text-xl font-semibold mb-2">もう先延ばしはしない</h3>
+                        <p class="text-gray-600">心理学を活用して先延ばしに打ち勝ち、習慣を身につける</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4">
@@ -381,8 +388,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2">Flexible Scheduling</h3>
-                        <p class="text-gray-600">Set your commitments for any time that works for you, with custom reminder notifications.</p>
+                        <h3 class="text-xl font-semibold mb-2">柔軟なスケジューリング</h3>
+                        <p class="text-gray-600">カスタムリマインダー通知で、都合の良い時間にコミットメントを設定できます</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4">
@@ -392,8 +399,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2">Beautiful Rewards</h3>
-                        <p class="text-gray-600">Collect stunning flower badges and learn fascinating botanical facts as you achieve your goals.</p>
+                        <h3 class="text-xl font-semibold mb-2">美しい報酬</h3>
+                        <p class="text-gray-600">見事な花のバッジを集め、目標を達成しながら魅力的な植物学的事実を学びましょう</p>
                     </div>
                 </div>
                 <div class="flex items-start space-x-4">
@@ -403,8 +410,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2">Customizable Stakes</h3>
-                        <p class="text-gray-600">Set your own stake amount for extra motivation. The higher the stakes, the more points you can earn.</p>
+                        <h3 class="text-xl font-semibold mb-2">カスタマイズ可能な杭</h3>
+                        <p class="text-gray-600">自分の賭け金を設定して、モチベーションを高めよう</p>
                     </div>
                 </div>
             </div>
@@ -414,39 +421,39 @@
     <!-- Innovative Use Cases -->
     <div id="use-cases" class="py-16 bg-transparent">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Creative Ways to Use Locomi</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Discover how others are using Locomi to transform their habits and achieve their goals.</p>
+            <h2 class="text-3xl font-bold text-center mb-4">Locomiのクリエイティブな使い方</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Locomiを使って習慣を変え、目標を達成している他の人たちの様子をご覧ください</p>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">Language Learning Immersion</h3>
-                    <p class="text-gray-600 mb-4">Set weekly check-ins at language exchange cafes or cultural centers. Use the stake as motivation to practice regularly in real-world settings.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">語学学習イマージョン</h3>
+                    <p class="text-gray-600 mb-4">ランゲージ・エクスチェンジ・カフェやカルチャー・センターで週1回のチェックインを設定する。杭をモチベーションに、実社会で定期的に練習する。</p>
                     <div class="text-sm text-gray-500">
-                        Example: ¥500 stake for visiting a Japanese conversation cafe every Tuesday at 7 PM
+                        例：毎週火曜日午後7時に英会話カフェに来店すると500円ステークス
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">Mindful Work-Life Balance</h3>
-                    <p class="text-gray-600 mb-4">Set a reminder to leave work on time by setting your home as the location. Use it to maintain healthy work boundaries.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">マインドフルワークライフバランス</h3>
+                    <p class="text-gray-600 mb-4">自宅を定時退社場所に設定することで、定時退社のリマインダーを設定する。健全な仕事の境界線を維持するために利用する。</p>
                     <div class="text-sm text-gray-500">
-                        Example: ¥1000 stake for being home by 7 PM on weekdays
+                        例：平日午後7時までに帰宅した場合、1,000円の賞金
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">Social Connection Goals</h3>
-                    <p class="text-gray-600 mb-4">Use Locomi to maintain social commitments and strengthen relationships by setting regular meetup locations.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">社会的つながりの目標</h3>
+                    <p class="text-gray-600 mb-4">Locomiを利用して、定期的な待ち合わせ場所を設定することで、社会的なコミットメントを維持し、人間関係を強化しましょう。</p>
                     <div class="text-sm text-gray-500">
-                        Example: ¥700 stake for monthly coffee meetups with friends at your favorite cafe
+                        例：お気に入りのカフェで友人と月1回コーヒーを楽しむための700円ステークス
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">Cultural Exploration</h3>
-                    <p class="text-gray-600 mb-4">Set goals to visit new museums, galleries, or cultural sites regularly. Perfect for both tourists and locals wanting to explore their city.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #4A90E2;">文化探訪</h3>
+                    <p class="text-gray-600 mb-4">新しい博物館、美術館、文化スポットを定期的に訪れる目標を立てましょう。観光客にも、自分の街を探検したい地元の人にも最適。</p>
                     <div class="text-sm text-gray-500">
-                        Example: ¥800 stake for visiting a new museum or gallery every other Sunday
+                        例：隔週日曜日に新しい美術館やギャラリーを訪れると800円の賞金が出る。
                     </div>
                 </div>
             </div>
@@ -456,23 +463,23 @@
     <!-- FAQ Section -->
     <div id="faq" class="py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">よくある質問</h2>
             <div class="space-y-6 max-w-3xl mx-auto">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2">How accurate is the location tracking?</h3>
-                    <p class="text-gray-600">Locomi uses your device's GPS to verify your location within a 100-meter radius of your target location, providing flexibility while maintaining accountability.</p>
+                    <h3 class="text-lg font-semibold mb-2">位置追跡の精度は？</h3>
+                    <p class="text-gray-600">LocomiはあなたのデバイスのGPSを使用して、ターゲット位置から半径100メートル以内のあなたの位置を確認し、説明責任を維持しながら、柔軟性を提供します。</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2">What happens if I can't make it to my location?</h3>
-                    <p class="text-gray-600">If you're unable to reach your designated location at the set time, your stake amount will be deducted. We recommend starting with smaller stakes as you build your habit.</p>
+                    <h3 class="text-lg font-semibold mb-2">現地に行けない場合はどうなりますか？</h3>
+                    <p class="text-gray-600">決められた時間に指定の場所に到着できなかった場合、賭け金は差し引かれます。習慣を身につけるために、少ない賭け金から始めることをお勧めします。</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2">How do I earn flower badges?</h3>
-                    <p class="text-gray-600">You earn points for each successful check-in, which can be used to unlock various flower badges. Each badge comes with unique botanical facts and varies in rarity.</p>
+                    <h3 class="text-lg font-semibold mb-2">フラワーバッジを獲得するには？</h3>
+                    <p class="text-gray-600">チェックインに成功するごとにポイントが加算され、そのポイントを使ってさまざまな花のバッジをアンロックできる。各バッジにはユニークな植物学的情報が付いており、レア度も様々です。</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2">Is my payment information secure?</h3>
-                    <p class="text-gray-600">Yes, all payment information is encrypted and processed through secure payment providers. We never store your actual payment details on our servers.</p>
+                    <h3 class="text-lg font-semibold mb-2">支払い情報は安全ですか？</h3>
+                    <p class="text-gray-600">はい、すべての支払い情報は暗号化され、安全な支払いプロバイダーを通じて処理されます。お客様の実際のお支払い情報を当社のサーバーに保存することはありません。</p>
                 </div>
             </div>
         </div>
@@ -487,7 +494,7 @@
                         <img src="./assets/images/logo_white_full.png" alt="Locomi Logo" class="w-8 h-8"/>
                         <span>Locomi</span>
                     </div>
-                    <p class="text-white mb-4">Your location-based accountability partner for achieving goals and collecting beautiful rewards.</p>
+                    <p class="text-white mb-4">位置情報を活用して目標達成をサポートし、美しい報酬を提供するあなたのパートナー。</p>
                     <div class="flex items-center space-x-2">
                         <a href="https://x.com" target="_blank">
                             <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
@@ -505,11 +512,11 @@
                     <!-- Empty middle column -->
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <h4 class="text-lg font-semibold mb-4">サポート</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-black hover:text-white">Help Center</a></li>
-                        <li><a href="./pages/privacy.html" class="text-black hover:text-white">Privacy Policy</a></li>
-                        <li><a href="./pages/tos.html" class="text-black hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-black hover:text-white">ヘルプセンター</a></li>
+                        <li><a href="./pages/privacy.html" class="text-black hover:text-white">プライバシーポリシー</a></li>
+                        <li><a href="./pages/tos.html" class="text-black hover:text-white">利用規約</a></li>
                     </ul>
                 </div>
             </div>
@@ -523,13 +530,13 @@
             "@context": "http://schema.org",
             "@type": "MobileApplication",
             "name": "Locomi",
-            "description": "Location-based accountability app for building habits and achieving goals",
+            "description": "位置情報を活用した習慣形成と目標達成のためのアプリ",
             "operatingSystem": "iOS",
             "applicationCategory": "Productivity",
             "offers": {
                 "@type": "Offer",
                 "price": "0",
-                "priceCurrency": "USD"
+                "priceCurrency": "JPY"
             }
         }
     </script>

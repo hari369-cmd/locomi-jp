@@ -1,20 +1,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locomi - Transform Your Goals into Reality with Location-Based Accountability | Available on iOS</title>
-    <meta name="description" content="Locomi helps you build lasting habits through location-based accountability. Set goals, show up, and earn beautiful flower badges while building better habits. Download now on iOS.">
-    <meta name="keywords" content="location based accountability, habit formation app, goal tracking, productivity app, iOS app, japanese app, flower badges, motivation app">
+    <title>Locomi - 位置情報を活用して目標達成をサポート | iOS アプリ</title>
+    <meta name="description" content="Locomiは位置情報を活用してあなたの習慣作りをサポートします。目標を設定し、実行し、美しい花のバッジを集めながら、より良い習慣を築きましょう。iOS でダウンロード可能。">
+    <meta name="keywords" content="位置情報 アカウンタビリティ, 習慣形成アプリ, 目標管理, 生産性アプリ, iOSアプリ, 日本語アプリ, フラワーバッジ, モチベーションアプリ">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Locomi - Location-Based Accountability App">
-    <meta property="og:description" content="Transform your goals into reality with location-based accountability. Available on iOS.">
+    <meta property="og:title" content="Locomi - 位置情報を活用したアカウンタビリティアプリ">
+    <meta property="og:description" content="位置情報を活用して目標を現実に。iOS でダウンロード可能。">
     <meta property="og:image" content="/api/placeholder/1200/630">
-    <meta property="og:url" content="https://loco-mi.com">
+    <meta property="og:url" content="https://jp.locomiapp.com">
     
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Locomi - Location-Based Accountability App">
-    <meta name="twitter:description" content="Turn your location into motivatio with location-based accountability. Available on iOS.">
+    <meta name="twitter:title" content="Locomi - 位置情報を活用したアカウンタビリティアプリ">
+    <meta name="twitter:description" content="位置情報であなたのモチベーションを高めましょう。iOS でダウンロード可能。">
     <meta name="twitter:image" content="/api/placeholder/1200/630">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -158,18 +158,23 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const langSelect = document.querySelector('.lang-select');
+            const container = document.querySelector('.lang-selector-container');
             
-            if (langSelect) {
+            if (langSelect && container) {
+                // Set initial value based on data attribute
+                const currentLang = container.dataset.currentLang;
+                langSelect.value = currentLang;
+
                 langSelect.addEventListener('change', () => {
                     if (langSelect.value === 'jp') {
-                        window.location.href = 'https://jp.locomiapp.com';
+                        window.location.href = 'jp.locomiapp.com';
                     } else {
-                        window.location.href = 'https://locomiapp.com';
+                        window.location.href = 'locomiapp.com';
                     }
                 });
             }
         });
-        
+
         function createGradientBackground(containerElement) {
             const circles = [
                 { width: "250px", height: "250px", top: "10%", left: "-10%" },
@@ -224,11 +229,11 @@
                         </a>
                     </div>
                     <div class="hidden md:flex space-x-8">
-                        <a href="../index.html#features" class="text-gray-700 hover:text-[#4A90E2]">Features</a>
-                        <a href="../index.html#habit-formation" class="text-gray-700 hover:text-[#4A90E2]">Build Habits</a>
-                        <a href="../index.html#how-it-works" class="text-gray-700 hover:text-[#4A90E2]">How It Works</a>
-                        <a href="../index.html#use-cases" class="text-gray-700 hover:text-[#4A90E2]">Use Cases</a>
-                        <a href="../index.html#faq" class="text-gray-700 hover:text-[#4A90E2]">FAQ</a>
+                        <a href="../index.html#features" class="text-gray-700 hover:text-[#4A90E2]">特徴</a>
+                        <a href="../index.html#habit-formation" class="text-gray-700 hover:text-[#4A90E2]">習慣を築く</a>
+                        <a href="../index.html#how-it-works" class="text-gray-700 hover:text-[#4A90E2]">しくみ</a>
+                        <a href="../index.html#use-cases" class="text-gray-700 hover:text-[#4A90E2]">使用例</a>
+                        <a href="../index.html#faq" class="text-gray-700 hover:text-[#4A90E2]">よくある質問</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -243,10 +248,12 @@
                             <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
                         </svg>
                     </a>
-                    <select class="bg-transparent text-gray-700 lang-select">
-                        <option value="en">ENG</option>
-                        <option value="jp">日本語</option>
-                    </select>
+                    <div class="lang-selector-container" data-current-lang="jp">
+                        <select class="bg-transparent text-gray-700 lang-select">
+                            <option value="en">ENG</option>
+                            <option value="jp">日本語</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -461,7 +468,7 @@
                         <img src="../assets/images/logo_white_full.png" alt="Locomi Logo" class="w-8 h-8"/>
                         <span>Locomi</span>
                     </div>
-                    <p class="text-white mb-4">Your location-based accountability partner for achieving goals and collecting beautiful rewards.</p>
+                    <p class="text-white mb-4">位置情報を活用して目標達成をサポートし、美しい報酬を提供するあなたのパートナー。</p>
                     <div class="flex items-center space-x-2">
                         <a href="https://x.com" target="_blank">
                             <svg class="hover:opacity-50 transition-opacity" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
@@ -479,11 +486,11 @@
                     <!-- Empty middle column -->
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <h4 class="text-lg font-semibold mb-4">サポート</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-black hover:text-white">Help Center</a></li>
-                        <li><a href="privacy.html" class="text-black hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-black hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-black hover:text-white">ヘルプセンター</a></li>
+                        <li><a href="privacy.html" class="text-black hover:text-white">プライバシーポリシー/a></li>
+                        <li><a href="#" class="text-black hover:text-white">利用規約</a></li>
                     </ul>
                 </div>
             </div>
