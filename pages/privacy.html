@@ -9,7 +9,7 @@
     <meta property="og:title" content="Locomi - Location-Based Accountability App">
     <meta property="og:description" content="Transform your goals into reality with location-based accountability. Available on iOS.">
     <meta property="og:image" content="/api/placeholder/1200/630">
-    <meta property="og:url" content="https://loco-mi.com">
+    <meta property="og:url" content="https://locomiapp.com">
     
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -94,9 +94,97 @@
             left: -100px;
             filter: blur(30px);
         }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+            background: transparent;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .privacy-section {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .privacy-section h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .privacy-section ul, 
+        .privacy-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .privacy-section ul {
+            list-style-type: disc;
+        }
+
+        .privacy-section ol {
+            list-style-type: decimal;
+        }
+
+        .privacy-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .privacy-note {
+            background-color: #36b5ff25;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.875rem;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .note {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.875rem;
+        }
+
+        .contact-email {
+            color: #666;
+            font-style: italic;
+        }
     </style>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.querySelector('.lang-select');
+            
+            if (langSelect) {
+                langSelect.addEventListener('change', () => {
+                    if (langSelect.value === 'jp') {
+                        window.location.href = 'https://jp.locomiapp.com';
+                    } else {
+                        window.location.href = 'https://locomiapp.com';
+                    }
+                });
+            }
+        });
+
         function createGradientBackground(containerElement) {
             const circles = [
                 { width: "250px", height: "250px", top: "10%", left: "-10%" },
@@ -133,7 +221,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            createGradientBackground(document.getElementById('policy'));
+            createGradientBackground(document.getElementById('container'));
         });
     </script>
 </head>
@@ -170,102 +258,123 @@
                             <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
                         </svg>
                     </a>
-                    <select class="bg-transparent text-gray-700">
-                        <option value="en">EN</option>
-                        <option value="jp">JP</option>
+                    <select class="bg-transparent text-gray-700 lang-select">
+                        <option value="en">ENG</option>
+                        <option value="jp">日本語</option>
                     </select>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div id="policy" class="relative p-20 pt-20">
-        <h2 class="text-3xl font-bold text-center mb-2">Privacy Policy</h2>
-        <p style="white-space: pre-wrap">
-            This Privacy Policy explains how your personal information is collected, used, and protected when you use the Locomi app ("App"). 
-            We are committed to protecting your privacy and handling your data in an open and transparent manner.
+    <div class="pt-20 pb-20">
+        <div id="container" class="container">
+            <h1 class="text-3xl font-bold text-center mb-4">プライバシーポリシー</h1>
+            
+            <div class="text-gray-500 text-sm text-center mb-8">
+                最終更新日: 2025年2月18日
+            </div>
 
-            1. Definition of Personal Information
-            Personal information refers to any information about a living individual that can identify them, including:
-            - Information that can directly identify an individual (such as name, date of birth)
-            - Information that can identify an individual when combined with other data
-            - Personal identification codes
+            <section class="privacy-section">
+                <p>
+                    Locomiをご利用いただき、ありがとうございます。本プライバシーポリシーでは、当アプリケーションのご利用に際して、お客様の個人情報をどのように収集、使用、保護するかについて説明いたします。
+                </p>
+            </section>
 
-            2. Information We Collect
-            2.1. Information you provide to us:
-            - Email address
-            - Payment information
-            - Task creation time and date
+            <section class="privacy-section">
+                <h2>収集する情報</h2>
+                <p>以下の情報を収集・保存します：</p>
+                <ul>
+                    <li>メールアドレス</li>
+                    <li>決済情報（Stripeを通じて安全に処理）</li>
+                    <li>コミットメントデータ（設定された時間と場所</li>
+                    <li>実績データ（獲得ポイントとバッジ）</li>
+                    <li>未払い金に関する情報</li>
+                </ul>
+                <div class="privacy-note">
+                    注：当アプリはコミットメント場所でユーザーがいることを確認のために一時的に位置情報へのアクセスを必要としますが、確認後は位置情報を保存・保持いたしません。
+                </div>
+            </section>
 
-            2.2. Information we automatically collect:
-            - Points collected
-            - Badges unlocked
-            - Payment history
+            <section class="privacy-section">
+                <h2>情報の使用目的</h2>
+                <p>お客様の情報は以下の目的でのみ使用されます：</p>
+                <ol>
+                    <li>アカウンタビリティサービスの提供</li>
+                    <li>コミットメント未達成時のStripeを通じた決済処理</li>
+                    <li>実績（ポイントとバッジ）の進捗管理</li>
+                    <li>重要なサービス更新の通知</li>
+                    <li>本人確認と不正防止</li>
+                    <li>サポートリクエストへの対応</li>
+                </ol>
+            </section>
 
-            3. How We Use Your Information
-            We use your personal information for:
-            - Providing core App functionality (location verification, task tracking)
-            - Processing payments and managing outstanding balances
-            - Awarding and managing points and badges
-            - Sending notifications about tasks and achievements
-            - Improving the App's features and performance
-            - Providing customer support
-            - Preventing fraud and unauthorized use
+            <section class="privacy-section">
+                <h2>データの保存とセキュリティ</h2>
+                <ul>
+                    <li>すべてのデータはFirebaseで安全に保管されます</li>
+                    <li>決済処理はStripeのセキュアなプラットフォームで行われます</li>
+                    <li>業界標準のセキュリティ対策を実施しています</li>
+                    <li>クレジットカード情報の完全な情報は保存しません（Stripeにて管理）</li>
+                </ul>
+            </section>
 
-            4. Location Data
-            4.1. The App requires access to your device's location to function properly. We do not either collect or store your location data.
-            4.2. You can control location permissions through your device settings, but this may limit App functionality.
+            <section class="privacy-section">
+                <h2>お客様のデータに関する権利</h2>
+                <p>お客様には以下の権利があります：</p>
+                <ul>
+                    <li>個人情報へのアクセス</li>
+                    <li>メールアドレスと決済情報の更新</li>
+                    <li>アカウントとそれに関連するデータの削除</li>
+                    <li>データのエクスポートのリクエスト</li>
+                </ul>
+                <div class="privacy-note">
+                    注：アカウントの削除および支払い方法の削除には、未払い金がないことが条件となります
+                </div>
+            </section>
+       
+            <section class="privacy-section">
+                <h2>データの保持期間</h2>
+                <p>
+                    お客様のデータは、サービス提供に必要な期間、または法令で定められた期間のみ保持します。アカウント削除時には、法的または管理上の目的で保持が必要な情報を除き、すべての個人情報をデータベースから削除いたします。
+                </p>
+            </section>
 
-            5. Data Protection
-            We implement appropriate technical and organizational measures to protect your personal information against:
-            - Unauthorized access
-            - Accidental loss
-            - Destruction
-            - Alteration
-            - Unauthorized disclosure
+            <section class="privacy-section">
+                <h2>第三者サービス</h2>
+                <p>以下の第三者サービスを使用しています：</p>
+                <ul>
+                    <li>Firebase（データストレージ）</li>
+                    <li>Stripe（決済処理）</li>
+                </ul>
+                <p>
+                    各サービスには、それぞれ独自のプライバシーポリシーがあり、お客様のデータの取り扱いについて定めています。
+                </p>
+            </section>
 
-            6. Payment Information
-            6.1. Payment information is processed securely through our payment service providers.
-            6.2. We do not store complete credit card information on our servers.
-            6.3. Payment history is retained for legal and accounting purposes.
+            <section class="privacy-section">
+                <h2>プライバシーポリシーの変更</h2>
+                <p>
+                    本プライバシーポリシーは随時更新される場合があります。重要な変更がある場合は、アプリ内通知またはメールにてお知らせいたします。
+                </p>
+            </section>
 
-            7. Data Sharing
-            We do not sell your personal information. We may share your data with:
-            - Payment processors (for processing transactions)
-            - Cloud service providers (for hosting services)
-            - Law enforcement (when legally required)
-
-            8. Your Rights
-            You have the right to:
-            - Access your personal information
-            - Correct inaccurate information
-            - Request deletion of your data
-
-            9. Data Retention
-            We retain your personal information for as long as necessary to:
-            - Provide our services
-            - Comply with legal obligations
-            - Resolve disputes
-            - Enforce our agreements
-
-            10. Cookies and Similar Technologies
-            The App may use cookies and similar technologies to:
-            - Remember your preferences
-            - Analyze App usage
-            - Improve performance
-            You can manage these through your device settings.
-
-            11. Children's Privacy
-            The App is not intended for users under the age of 13. We do not knowingly collect information from children under 13.
-
-            12. Changes to This Policy
-            We may update this Privacy Policy periodically. We will notify you of any material changes through the App.
-
-            13. Contact Information
-            For privacy-related questions or requests, contact us at:
-            [Your Contact Information]
-        </p>
-    </div>
+            <section class="privacy-section">
+                <h2>お問い合わせ</h2>
+                <p>
+                    本プライバシーポリシーやお客様のデータについてご質問がある場合は、以下までご連絡ください：<br>
+                    <span class="contact-email">[連絡先メールアドレス]</span>
+                </p>
+            </section>
+            
+            <section class="privacy-section">
+                <h2>発効日</h2>
+                <p>
+                    本ポリシーは[2025年2月18日]より発効します。
+                </p>
+            </section>
+        </div>
+</div>
 
     <!-- Footer -->
     <footer class="gradient-bg text-white py-12">

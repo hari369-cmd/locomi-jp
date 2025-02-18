@@ -94,9 +94,82 @@
             left: -100px;
             filter: blur(30px);
         }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+            background: transparent;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tos-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .tos-section h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tos-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .tos-section ul, 
+        .tos-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .tos-section ul {
+            list-style-type: disc;
+        }
+
+        .tos-section ol {
+            list-style-type: decimal;
+        }
+
+        .tos-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .tos-note {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.875rem;
+        }
+
+        .contact-email {
+            color: #666;
+            font-style: italic;
+        }
     </style>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.querySelector('.lang-select');
+            
+            if (langSelect) {
+                langSelect.addEventListener('change', () => {
+                    if (langSelect.value === 'jp') {
+                        window.location.href = 'https://jp.locomiapp.com';
+                    } else {
+                        window.location.href = 'https://locomiapp.com';
+                    }
+                });
+            }
+        });
+        
         function createGradientBackground(containerElement) {
             const circles = [
                 { width: "250px", height: "250px", top: "10%", left: "-10%" },
@@ -170,114 +243,213 @@
                             <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
                         </svg>
                     </a>
-                    <select class="bg-transparent text-gray-700">
-                        <option value="en">EN</option>
-                        <option value="jp">JP</option>
+                    <select class="bg-transparent text-gray-700 lang-select">
+                        <option value="en">ENG</option>
+                        <option value="jp">日本語</option>
                     </select>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div id="tos" class="relative p-20 pt-20">
-        <h2 class="text-3xl font-bold text-center mb-2">Terms of Service</h2>
-        <p style="white-space: pre-wrap">
-            These Terms of Service (hereinafter referred to as the "Terms") set forth the terms and conditions for using the Locomi app (hereinafter referred to as the "App") 
-            and establish the rights and obligations between users and the App. Please read all provisions carefully before using the App.
+    <div class="pt-20 pb-20">
+        <div id="tos" class="container">
+            <h1 class="text-3xl font-bold text-center mb-4">利用規約</h1>
+            
+            <div class="text-gray-500 text-sm text-center mb-8">
+                最終更新日: 2025年2月18日
+            </div>
 
-            1. Application
-            1.1. These Terms shall govern all relationships between registered users (as defined in Article 2) and the App regarding its use.
-            1.2. Any rules, guidelines, or other regulations related to the App that are posted within the App or on its website shall constitute an integral part of these Terms.
+            <!-- ToS Content Sections -->
+            <section class="tos-section">
+                <p>
+                    本利用規約（以下「本規約」といいます）は、Locomiアプリケーション（以下「本アプリ」といいます）の利用条件及び本アプリと登録ユーザーの間の権利義務関係を定めるものです。本アプリのご利用にあたっては、本規約の全文をお読みいただいたうえで、本規約に同意いただく必要があります。
+                </p>
+            </section>
 
-            2. Definitions
-            The following terms used in these Terms shall have the meanings set forth below:
-            (1) "App" means the location-based accountability application named "Locomi" (including any related features, regardless of name changes).
-            (2) "Location Task" means a commitment set by a registered user to be at a specific location at a specified time.
-            (3) "Task Amount" means the amount set by the registered user that will be charged if the Location Task is not completed.
-            (4) "Task Time" means the time specified by the registered user by which the Location Task must be completed.
-            (5) "Task Completion" means when a registered user is within 100 meters of the specified location at the Task Time and confirms completion through the App.
-            (6) "Points" means the reward points (200 points per completed task) that users can collect to unlock flower badges.
-            (7) "Outstanding Balance" means any failed payments that the user owes.
-            (8) "Registration Information" means email address, phone number, credit card information, and other information required for using the App.
+            <section class="tos-section">
+                <h2>第1条（適用）</h2>
+                <ol>
+                    <li>本規約は、本アプリの利用に関する登録ユーザーと本アプリとの間の一切の関係に適用されます。</li>
+                    <li>本アプリ内又はウェブサイトに掲載される本アプリに関するルール、ガイドライン等は、本規約の一部を構成するものとします。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第2条（定義）</h2>
+                <p>本規約において使用する用語の定義は、以下の各号に定めるとおりとします。</p>
+                <ol>
+                    <li>「本アプリ」とは、位置情報を活用したアカウンタビリティアプリケーション「Locomi」（名称変更後のものを含みます）を意味します。</li>
+                    <li>「ロケーションタスク」とは、登録ユーザーが特定の時間に特定の場所にいることを約束するタスクを意味します。</li>
+                    <li>「タスク金額」とは、ロケーションタスクが未完了の場合に課金される、登録ユーザーが設定した金額を意味します。</li>
+                    <li>「目標時間」とは、登録ユーザーがロケーションタスクを完了すべきものとして指定した時間を意味します。</li>
+                    <li>「タスク完了」とは、登録ユーザーが目標時間に指定された場所から100メートル以内におり、かつアプリを通じて完了確認を行うことを意味します。</li>
+                    <li>「ポイント」とは、タスク完了時に付与される報酬ポイント（1タスクにつき200ポイント）を意味し、フラワーバッジのアンロックに使用できます。</li>
+                    <li>「未払い残高」とは、ユーザーが支払うべき未払いの金額を意味します。</li>
+                    <li>「登録情報」とは、メールアドレス、クレジットカード情報その他本アプリの利用に必要な情報を意味します。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第3条（登録）</h2>
+                <ol>
+                    <li>本アプリの利用を希望する者は、本規約に同意のうえ、所定の情報を提供することにより、本アプリへの登録を申請することができます。</li>
+                    <li>登録希望者は、真実、正確かつ完全な情報を提供しなければなりません。</li>
+                    <li>登録ユーザーは、登録情報を最新の状態に保つものとします。</li>
+                    <li>本アプリは、以下の場合には登録を拒否することができます。
+                        <ul>
+                            <li>提供された情報に虚偽、誤り又は記載漏れがある場合</li>
+                            <li>未成年者が保護者の同意を得ていない場合</li>
+                            <li>その他本アプリが登録を適当でないと判断した場合</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第4条（サービスの利用）</h2>
+                <ol>
+                    <li>ロケーションタスクの設定には以下の情報が必要です：
+                        <ul>
+                            <li>目標場所</li>
+                            <li>目標時間</li>
+                            <li>タスク金額</li>
+                        </ul>
+                    </li>
+                    <li>以下の場合、ユーザーの登録決済方法にタスク金額が課金されます：
+                        <ul>
+                            <li>目標時間に指定場所から100メートル以内にいない場合</li>
+                            <li>アプリでのタスク完了確認を行わなかった場合</li>
+                        </ul>
+                    </li>
+                    <li>タスク完了時に200ポイントが付与されます。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第5条（支払いと返金）</h2>
+                <ol>
+                    <li>ユーザーは、有効な決済情報を提供する必要があります。</li>
+                    <li>支払いが失敗した場合、未払い残高として記録されます。</li>
+                    <li>未払い残高の支払いは任意のタイミングで可能ですが、支払いまでアプリの利用が制限される場合があります。</li>
+                    <li>決済手数料はユーザーの負担となります。</li>
+                    <li>支払いの処理はStripe社のサービスを通じて行われます。</li>
+                    <li>タスク金額の返金は原則として行いません。ただし、本アプリの重大な技術的障害によりタスクの完了が不可能であったと本アプリが判断した場合に限り、例外的に返金を検討する場合があります。その場合、技術的障害の存在及びタスク完了の不可能性を証明する責任はユーザーにあり、本アプリは証明の成否にかかわらず、返金の判断について一切の責任を負わないものとします。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第6条（位置情報とプライバシー）</h2>
+                <ol>
+                    <li>本アプリの利用には、デバイスの位置情報サービスへのアクセスが必要です。</li>
+                    <li>位置情報の収集は、タスク完了の確認時のみ行われます。</li>
+                    <li>ユーザーのプライバシーは、本規約の一部を構成するプライバシーポリシーに従って保護されます。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第7条（禁止事項）</h2>
+                <p>ユーザーは、以下の行為を行ってはなりません：</p>
+                <ol>
+                    <li>位置情報の改ざんまたは位置確認の回避を試みること</li>
+                    <li>自動化システムを使用してタスクを完了すること</li>
+                    <li>アカウントまたはアカウント認証情報を共有すること</li>
+                    <li>本アプリを違法な目的で使用すること</li>
+                    <li>本アプリのリバースエンジニアリングを試みること</li>
+                    <li>他のユーザーに対する嫌がらせまたは危害を加えること</li>
+                    <li>虚偽の決済情報を提供すること</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第8条（サービスの中断）</h2>
+                <ol>
+                    <li>以下の場合、本アプリのサービスが中断される場合があります：
+                        <ul>
+                            <li>メンテナンス</li>
+                            <li>技術的問題</li>
+                            <li>システムアップデート</li>
+                            <li>不可抗力事由</li>
+                        </ul>
+                    </li>
+                    <li>サービス中断によるタスク未完了の場合でも返金は行いません。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第9条（ポイントと報酬）</h2>
+                <ol>
+                    <li>ポイントは確認されたタスク完了時に付与されます。</li>
+                    <li>ポイントに金銭的価値はなく、現金との交換はできません。</li>
+                    <li>ポイントとフラワーバッジはアカウント間で譲渡できません。</li>
+                    <li>本アプリは、ポイントシステムと報酬を変更する権利を留保します。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第10条（アカウントの解約）</h2>
+                <ol>
+                    <li>ユーザーは、いつでもアカウントを解約できます。</li>
+                    <li>アカウント解約前に未払い残高を清算する必要があります。</li>
+                    <li>以下の場合、本アプリはアカウントを解約することができます：
+                        <ul>
+                            <li>本規約違反</li>
+                            <li>長期の未使用</li>
+                            <li>不審な活動</li>
+                            <li>未払い残高の未清算</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第11条（免責事項）</h2>
+                <ol>
+                    <li>本アプリは「現状有姿」で提供され、明示または黙示を問わず、いかなる種類の保証も行いません。</li>
+                    <li>本アプリは、以下について責任を負いません：
+                        <ul>
+                            <li>交通機関の問題による目標場所への到達失敗</li>
+                            <li>デバイスまたはネットワークの障害</li>
+                            <li>不正確な位置情報</li>
+                            <li>デバイスの紛失または盗難</li>
+                        </ul>
+                    </li>
+                    <li>本アプリの賠償責任は、直近3ヶ月間にユーザーが支払った金額を上限とします。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第12条（規約の変更）</h2>
+                <ol>
+                    <li>本アプリは、本規約を随時変更することができます。</li>
+                    <li>変更後の本規約は、本アプリ内での告知時に効力を生じるものとします。</li>
+                    <li>ユーザーが変更後も本アプリの利用を継続した場合、変更後の規約に同意したものとみなします。</li>
+                </ol>
+            </section>
 
-            3. Registration
-            3.1. Users must register to use the App by agreeing to these Terms and providing the required Registration Information.
-            3.2. Users must provide accurate, current, and complete information during registration.
-            3.3. Users are responsible for maintaining the confidentiality of their account information and all activities that occur under their account.
+            <section class="tos-section">
+                <h2>第13条（準拠法及び管轄）</h2>
+                <ol>
+                    <li>本規約の準拠法は日本法とします。</li>
+                    <li>本規約に関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</li>
+                </ol>
+            </section>
+            
+            <section class="tos-section">
+                <h2>第14条（お問い合わせ）</h2>
+                <p>
+                    本規約に関するお問い合わせは、以下のメールアドレスまでお願いいたします：<br>
+                    <span class="contact-email">[連絡先メールアドレス]</span>
+                </p>
+            </section>
 
-            4. Service Usage
-            4.1. To set a Location Task, users must specify:
-            - The target location
-            - The Task Time
-            - The Task Amount
-            4.2. The Task Amount will be charged to the user's registered payment method if:
-            - The user is not within 100 meters of the specified location at the Task Time
-            - The user fails to confirm task completion through the App
-            4.3. Upon successful Task Completion, users will receive 200 Points.
-            4.4. Points can be collected and used to unlock flower badges within the App.
-
-            5. Payments and Charges
-            5.1. Users must provide valid payment information to use the App.
-            5.2. If a payment fails, it will be recorded as an Outstanding Balance.
-            5.3. Users may pay Outstanding Balances at their convenience, but continued use of the App may be restricted until payment is made.
-            5.4. All payment processing fees are the responsibility of the user.
-
-            6. Location Services and Privacy
-            6.1. The App requires access to device location services to function properly.
-            6.2. Location data is only collected when necessary to verify Task Completion.
-            6.3. Users' privacy is protected according to our Privacy Policy, which is incorporated into these Terms by reference.
-
-            7. Prohibited Actions
-            7.1. Users shall not:
-            - Attempt to manipulate location data or circumvent location verification
-            - Use automated systems to complete tasks
-            - Share accounts or account credentials
-            - Use the App for illegal purposes
-            - Attempt to reverse engineer the App
-            - Harass or harm other users
-            - Submit false payment information
-
-            8. Service Interruption
-            8.1. The App service may be interrupted for:
-            - Maintenance
-            - Technical issues
-            - System updates
-            - Force majeure events
-            8.2. No refunds will be issued for tasks failed due to service interruptions.
-
-            9. Points and Rewards
-            9.1. Points are awarded only for verified Task Completion.
-            9.2. Points have no monetary value and cannot be exchanged for cash.
-            9.3. Points and flower badges may not be transferred between accounts.
-            9.4. We reserve the right to modify the points system and rewards.
-
-            10. Account Termination
-            10.1. Users may terminate their account at any time.
-            10.2. Outstanding Balances must be paid before account termination.
-            10.3. We may terminate accounts for:
-                - Violation of these Terms
-                - Extended periods of inactivity
-                - Suspicious activity
-                - Failure to pay Outstanding Balances
-
-            11. Limitation of Liability
-            11.1. The App is provided "as is" without warranties of any kind.
-            11.2. We are not responsible for:
-                - Failure to reach locations due to transportation issues
-                - Device or network failures
-                - Incorrect location data
-                - Lost or stolen devices
-            11.3. Maximum liability is limited to the amount paid by the user in the past 3 months.
-
-            12. Changes to Terms
-            12.1. These Terms may be updated at any time.
-            12.2. Users will be notified of changes through the App.
-            12.3. Continued use of the App constitutes acceptance of new Terms.
-
-            13. Governing Law
-            13.1. These Terms shall be governed by the laws of [Your Jurisdiction].
-            13.2. Any disputes shall be resolved in the courts of [Your Jurisdiction].
-        </p>
+            <section class="tos-section">
+                <h2>発効日</h2>
+                <p>
+                    利用規約は[2025年2月18日]より発効します。
+                </p>
+            </section>
+        </div>
     </div>
 
     <!-- Footer -->
