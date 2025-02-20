@@ -104,12 +104,13 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .privacy-section {
-            margin-bottom: 1rem;
+        .contact-section {
+            margin-bottom: 2rem;
             padding-bottom: 1rem;
+            justify-items: center;
         }
 
-        .privacy-section h2 {
+        .contact-section h2 {
             font-size: 1.25rem;
             font-weight: 600;
             color: #1a1a1a;
@@ -117,46 +118,31 @@
             margin-bottom: 1rem;
         }
 
-        .privacy-section p {
+        .contact-section p {
             margin-bottom: 1rem;
             line-height: 1.6;
         }
 
-        .privacy-section ul, 
-        .privacy-section ol {
+        .contact-section ul, 
+        .contact-section ol {
             margin: 1rem 0;
             padding-left: 2rem;
         }
 
-        .privacy-section ul {
+        .contact-section ul {
             list-style-type: disc;
         }
 
-        .privacy-section ol {
+        .contact-section ol {
             list-style-type: decimal;
         }
 
-        .privacy-section li {
+        .contact-section li {
             margin-bottom: 0.5rem;
             line-height: 1.5;
         }
 
-        .privacy-note {
-            background-color: #36b5ff25;
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-            font-size: 0.875rem;
-        }
-
-        .last-updated {
-            text-align: center;
-            color: #666;
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-        }
-
-        .note {
+        .contact-note {
             background-color: #f8f9fa;
             padding: 1rem;
             border-radius: 6px;
@@ -167,6 +153,8 @@
         .contact-email {
             color: #666;
             font-style: italic;
+            justify-items: center;
+            padding: 5rem;
         }
     </style>
 
@@ -182,9 +170,9 @@
 
                 langSelect.addEventListener('change', () => {
                     if (langSelect.value === 'jp') {
-                        window.location.href = 'https://jp.locomiapp.com/pages/privacy.html';
+                        window.location.href = 'https://jp.locomiapp.com/pages/contact.html';
                     } else {
-                        window.location.href = 'https://locomiapp.com/pages/privacy.html';
+                        window.location.href = 'https://locomiapp.com/pages/contact.html';
                     }
                 });
             }
@@ -226,7 +214,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            createGradientBackground(document.getElementById('container'));
+            createGradientBackground(document.getElementById('contact-section'));
         });
     </script>
 </head>
@@ -274,115 +262,20 @@
         </div>
     </nav>
 
-    <div class="pt-20 pb-20">
-        <div id="container" class="container">
-            <h1 class="text-3xl font-bold text-center mb-4">プライバシーポリシー</h1>
+    <div class="pt-40 pb-40 bg-gray-100">
+        <div id="contact" class="container bg-white">
+            <h1 class="text-3xl font-bold text-center mb-4">お問い合わせ</h1>
             
-            <div class="text-gray-500 text-sm text-center mb-8">
-                最終更新日: 2025年2月18日
-            </div>
-
-            <section class="privacy-section">
+            <section class="contact-section">
+                <h2>いつもLocomiをご利用いただき誠にありがとうございます</h2>
                 <p>
-                    Locomiをご利用いただき、ありがとうございます。本プライバシーポリシーでは、当アプリケーションのご利用に際して、お客様の個人情報をどのように収集、使用、保護するかについて説明いたします。
-                </p>
-            </section>
-
-            <section class="privacy-section">
-                <h2>収集する情報</h2>
-                <p>以下の情報を収集・保存します：</p>
-                <ul>
-                    <li>メールアドレス</li>
-                    <li>決済情報（Stripeを通じて安全に処理）</li>
-                    <li>コミットメントデータ（設定された時間と場所</li>
-                    <li>実績データ（獲得ポイントとバッジ）</li>
-                    <li>未払い金に関する情報</li>
-                </ul>
-                <div class="privacy-note">
-                    注：当アプリはコミットメント場所でユーザーがいることを確認のために一時的に位置情報へのアクセスを必要としますが、確認後は位置情報を保存・保持いたしません。
-                </div>
-            </section>
-
-            <section class="privacy-section">
-                <h2>情報の使用目的</h2>
-                <p>お客様の情報は以下の目的でのみ使用されます：</p>
-                <ol>
-                    <li>アカウンタビリティサービスの提供</li>
-                    <li>コミットメント未達成時のStripeを通じた決済処理</li>
-                    <li>実績（ポイントとバッジ）の進捗管理</li>
-                    <li>重要なサービス更新の通知</li>
-                    <li>本人確認と不正防止</li>
-                    <li>サポートリクエストへの対応</li>
-                </ol>
-            </section>
-
-            <section class="privacy-section">
-                <h2>データの保存とセキュリティ</h2>
-                <ul>
-                    <li>すべてのデータはFirebaseで安全に保管されます</li>
-                    <li>決済処理はStripeのセキュアなプラットフォームで行われます</li>
-                    <li>業界標準のセキュリティ対策を実施しています</li>
-                    <li>クレジットカード情報の完全な情報は保存しません（Stripeにて管理）</li>
-                </ul>
-            </section>
-
-            <section class="privacy-section">
-                <h2>お客様のデータに関する権利</h2>
-                <p>お客様には以下の権利があります：</p>
-                <ul>
-                    <li>個人情報へのアクセス</li>
-                    <li>メールアドレスと決済情報の更新</li>
-                    <li>アカウントとそれに関連するデータの削除</li>
-                    <li>データのエクスポートのリクエスト</li>
-                </ul>
-                <div class="privacy-note">
-                    注：アカウントの削除および支払い方法の削除には、未払い金がないことが条件となります
-                </div>
-            </section>
-       
-            <section class="privacy-section">
-                <h2>データの保持期間</h2>
-                <p>
-                    お客様のデータは、サービス提供に必要な期間、または法令で定められた期間のみ保持します。アカウント削除時には、法的または管理上の目的で保持が必要な情報を除き、すべての個人情報をデータベースから削除いたします。
-                </p>
-            </section>
-
-            <section class="privacy-section">
-                <h2>第三者サービス</h2>
-                <p>以下の第三者サービスを使用しています：</p>
-                <ul>
-                    <li>Firebase（データストレージ）</li>
-                    <li>Stripe（決済処理）</li>
-                </ul>
-                <p>
-                    各サービスには、それぞれ独自のプライバシーポリシーがあり、お客様のデータの取り扱いについて定めています。
-                </p>
-            </section>
-
-            <section class="privacy-section">
-                <h2>プライバシーポリシーの変更</h2>
-                <p>
-                    本プライバシーポリシーは随時更新される場合があります。重要な変更がある場合は、アプリ内通知またはメールにてお知らせいたします。
-                </p>
-            </section>
-
-            <section class="privacy-section">
-                <h2>お問い合わせ</h2>
-                <p>
-                    本プライバシーポリシーやお客様のデータについてご質問がある場合は、以下までご連絡ください：<br>
+                    ご質問がございましたら、下記までお問い合わせください。<br>
                     <span class="contact-email">info at locomiapp dot com</span><br>
                     「at」を「@」記号に、「dot」を「.」に置き換えてください。
                 </p>
             </section>
-            
-            <section class="privacy-section">
-                <h2>発効日</h2>
-                <p>
-                    本ポリシーは[2025年2月18日]より発効します。
-                </p>
-            </section>
         </div>
-</div>
+    </div>
 
     <!-- Footer -->
     <footer class="gradient-bg text-white py-12">
@@ -413,8 +306,8 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">サポート</h4>
                     <ul class="space-y-2">
-                        <li><a href="contact.html" class="text-black hover:text-white">お問い合わせ</a></li>
-                        <li><a href="#" class="text-black hover:text-white">プライバシーポリシー</a></li>
+                        <li><a href="#" class="text-black hover:text-white">お問い合わせ</a></li>
+                        <li><a href="privacy.html" class="text-black hover:text-white">プライバシーポリシー</a></li>
                         <li><a href="tos.html" class="text-black hover:text-white">利用規約</a></li>
                     </ul>
                 </div>
